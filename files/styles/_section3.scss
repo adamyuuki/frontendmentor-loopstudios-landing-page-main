@@ -1,0 +1,28 @@
+.third-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 6rem;
+
+	a {
+		height: 2.6rem;
+		width: 10rem;
+		background-color: $white;
+		color: $black;
+		border: 2px solid $black;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-decoration: none;
+		font-family: $biggerfont;
+		font-size: 1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.2rem;
+		transition: all 300ms ease-in-out;
+
+		&:hover {
+			background-color: $black;
+			color: $white;
+		}
+	}
+}

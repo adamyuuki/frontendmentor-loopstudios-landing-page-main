@@ -1,0 +1,24 @@
+@import "variables";
+@import "globals";
+@import "mixins";
+@import "header";
+@import "keyframes";
+@import "section1";
+@import "section2";
+@import "cards";
+@import "section3";
+@import "footer";
+
+//Visibility
+
+.hide-for-mobile {
+	@include breakpoint-down {
+		display: none;
+	}
+}
+
+.hide-for-desktop {
+	@include breakpoint-up {
+		display: none;
+	}
+}

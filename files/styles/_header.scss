@@ -1,0 +1,133 @@
+header {
+	background-image: url("../../images/mobile/image-hero.jpg");
+	height: 40.75rem;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+	position: relative;
+
+	@include breakpoint-up {
+		background-image: url("../../images/desktop/image-hero.jpg");
+	}
+
+	nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 2.5rem 1.5rem;
+
+		@include breakpoint-up {
+			padding: 4rem 10rem;
+		}
+
+		.header-logo {
+			z-index: 99;
+		}
+
+		.header-menu {
+			background-image: url("../../images/icon-hamburger.svg");
+			z-index: 99;
+			width: 1.5rem;
+			height: 1.5rem;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center center;
+			transition: background-image 300ms ease-in-out;
+		}
+
+		.open {
+			background-image: url("../../images/icon-close.svg");
+		}
+
+		.header-links {
+			a {
+				color: $white;
+				font-size: 1rem;
+				font-family: $biggerfont;
+				text-decoration: none;
+				position: relative;
+
+				&:hover {
+					cursor: pointer;
+
+					&::before {
+						opacity: 1;
+					}
+				}
+
+				&:not(:last-child) {
+					margin-right: 2rem;
+				}
+
+				&::before {
+					content: "";
+					width: 60%;
+					background: $white;
+					display: block;
+					position: absolute;
+					height: 3px;
+					// right: 0;
+					left: 50%;
+					transform: translateX(-50%);
+					bottom: -0.7rem;
+					opacity: 0;
+					transition: opacity 300ms ease-in-out;
+				}
+			}
+		}
+	}
+
+	.header-title {
+		height: 12.5rem;
+		width: 20rem;
+		border: 2px solid $white;
+		font-size: 2.5rem;
+		font-family: $smallfont;
+		text-transform: uppercase;
+		padding: 1.5rem 1.5rem;
+		margin: auto;
+		margin-top: 10rem;
+
+		@include breakpoint-up {
+			height: 17.5rem;
+			width: 40.6rem;
+			font-size: 4.5rem;
+			padding: 2rem;
+			// margin: 0;
+			margin-top: 7.5rem;
+			margin-left: 10rem;
+		}
+	}
+
+	.overlay {
+		display: none;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		background: $black;
+		z-index: 98;
+		animation: right-to-left 300ms ease-in-out;
+
+		.overlay-links {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			margin-top: 13.5rem;
+			margin-left: 1.5rem;
+
+			a {
+				text-decoration: none;
+				color: $white;
+				font-family: $smallfont;
+				font-size: 1.5rem;
+				text-transform: uppercase;
+
+				&:not(:last-child) {
+					margin-bottom: 2rem;
+				}
+			}
+		}
+	}
+}
